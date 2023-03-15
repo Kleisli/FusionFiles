@@ -1,0 +1,14 @@
+prototype(Kleisli.FusionFiles:Helper.RenderFileMatcher) < prototype(Neos.Fusion:Component) {
+    fileExtension = ''
+
+    renderer = Neos.Fusion:Matcher {
+        condition = Neos.Fusion:Component {
+            hasRequestFormat = ${request.format == String.toLowerCase(props.fileExtension)}
+            hasFusionPrototype = Neos.Fusion:CanRender {
+                type = ${node.nodeType.name + '.' + String.firstLetterToUpperCase(props.fileExtension)}
+            }
+            renderer = ${props.hasRequestFormat && props.hasFusionPrototype}
+        }
+        type = ${node.nodeType.name + '.' + String.firstLetterToUpperCase(props.fileExtension)}
+    }
+}

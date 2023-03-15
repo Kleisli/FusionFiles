@@ -1,0 +1,12 @@
+prototype(Kleisli.FusionFiles:File.Json) < prototype(Neos.Fusion:Http.Message) {
+
+    httpResponseHead {
+        headers = Neos.Fusion:DataStructure {
+            Content-Type = 'application/json'
+        }
+    }
+
+    data = Neos.Fusion:DataStructure
+    data.@process.renderAsJSON = ${FusionFiles.Json.stringify(value)}
+
+}

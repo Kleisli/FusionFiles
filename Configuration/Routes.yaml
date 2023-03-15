@@ -1,0 +1,20 @@
+-
+  name: 'Node with format option'
+  uriPattern: '{node}(.{@format})'
+  defaults:
+    '@package':    'Neos.Neos'
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+  routeParts:
+    'node':
+      handler:     'Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
+
+-
+  name:          'Preview with format'
+  uriPattern:    'neos/preview.{@format}'
+  defaults:
+    '@package' :   'Neos.Neos'
+    '@controller': 'Frontend\Node'
+    '@action':     'preview'
+  appendExceedingArguments: true

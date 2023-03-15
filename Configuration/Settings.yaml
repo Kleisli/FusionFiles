@@ -1,0 +1,14 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        'Kleisli.FusionFiles': TRUE
+  Flow:
+    mvc:
+      routes:
+        'Kleisli.FusionFiles':
+          position: 'after Neos.Neos'
+  Fusion:
+    defaultContext:
+      'FusionFiles.Json': 'Kleisli\FusionFiles\Eel\Helper\JsonHelper'
+

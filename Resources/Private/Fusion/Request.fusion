@@ -1,0 +1,9 @@
+root {
+
+    // Hook into the root matcher to change rendering for JSON requests
+    json {
+        condition = ${request.format == 'json'}
+        type = ${q(node).property('_nodeType') + '.Json'}
+    }
+
+}
