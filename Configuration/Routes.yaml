@@ -9,6 +9,7 @@
   routeParts:
     'node':
       handler:     'Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
+  appendExceedingArguments: true
 
 -
   name:          'Preview with format'
