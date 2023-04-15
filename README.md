@@ -1,4 +1,4 @@
-# FusionFiles
+# Kleisli.FusionFiles
 ***
 Serve different file formats with Neos.Fusion
 ***
