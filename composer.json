@@ -1,5 +1,5 @@
 {
-    "description": "",
+    "description": "Serve different file formats with Neos.Fusion",
     "type": "neos-package",
     "name": "kleisli/fusionfiles",
     "require": {
