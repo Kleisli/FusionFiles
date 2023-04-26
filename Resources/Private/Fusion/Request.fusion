@@ -5,4 +5,9 @@ root {
         fileExtension = 'json'
     }
 
+    // Hook into the root matcher to change rendering for ICS requests
+    ics = Kleisli.FusionFiles:Helper.RenderFileMatcher {
+        fileExtension = 'ics'
+    }
+
 }

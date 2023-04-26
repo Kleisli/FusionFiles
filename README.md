@@ -5,6 +5,7 @@ Serve different file formats with Neos.Fusion
 
 ## Available formats
 * json
+* ics
 * pdf (with additional package Kleisli.FusionFiles.Pdf)
 
 ## Json
@@ -33,6 +34,30 @@ on requesting https://your.domain/path/to/node.json the response will be somethi
         {"id": "def"}
     ]
 }
+```
+
+## Ics Event
+Make nodes representing an event addable to calendars.  
+
+To render a node `My.Event` as ics, just add a fusion prototype `My.Event.Ics` that
+extends `Kleisli.FusionFiles:File.Ics.Event` and add the event properties to the data property.
+
+### Example
+```
+prototype(My.App:Document.Event.Ics) < prototype(Kleisli.FusionFiles:File.Ics.Event) {
+    data {
+        startDateTime = ${node.properties.startDate}
+        endDateTime = ${node.properties.endDate}
+        title = ${node.properties.title}
+    }
+}
+```
+
+In the template of `My.Event` you can link the ICS file like: 
+```
+<Neos.Neos:NodeLink node={documentNode} attributes.href.format="ics">
+    Add to calendar
+</Neos.Neos:NodeLink>
 ```
 
 ## Use the helpers for other file formats 

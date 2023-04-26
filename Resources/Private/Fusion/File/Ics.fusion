@@ -1,0 +1,19 @@
+prototype(Kleisli.FusionFiles:File.Ics) < prototype(Neos.Fusion:Http.Message) {
+
+    httpResponseHead {
+        headers = Neos.Fusion:DataStructure {
+            Content-Type = 'text/calendar'
+        }
+    }
+
+    data = ''
+    data.@process.wrap = Neos.Fusion:Join {
+        begin = 'BEGIN:VCALENDAR'
+        version = 'VERSION:2.0'
+        prodid = 'PRODID:-//Neos.Fusion//Kleisli.FusionFiles//'
+        content = ${value}
+        end = 'END:VCALENDAR'
+        @glue = "\n"
+    }
+
+}
