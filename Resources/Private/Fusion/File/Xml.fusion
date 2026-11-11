@@ -1,0 +1,15 @@
+prototype(Kleisli.FusionFiles:File.Xml) < prototype(Neos.Fusion:Http.Message) {
+
+    httpResponseHead {
+        headers = Neos.Fusion:DataStructure {
+            Content-Type = 'application/xml'
+        }
+    }
+
+    data = ''
+    data.@process.wrap = Neos.Fusion:Join {
+        declaration = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>'
+        data = ${value}
+        @glue = "\n"
+    }
+}

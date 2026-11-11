@@ -1,0 +1,10 @@
+prototype(Kleisli.FusionFiles:File.Markdown) < prototype(Neos.Fusion:Http.Message) {
+
+    httpResponseHead {
+        headers = Neos.Fusion:DataStructure {
+            Content-Type = 'text/markdown'
+        }
+    }
+
+    data = ''
+}
